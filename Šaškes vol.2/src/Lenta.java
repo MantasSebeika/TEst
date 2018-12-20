@@ -1,11 +1,15 @@
-public class Lenta {
-    
-    private int Dydis = 8;
-    private char[][] lenta;
-    private int balta;     
-    private int juoda;
-    private char kienoejimas; 
 
+public abstract class Lenta {
+
+    protected int Dydis = 8;
+    protected char[][] lenta;
+    protected int balta;
+    protected int juoda;
+    protected char kienoejimas;
+
+    public String Informacija(){
+        return "As esu Paprasta Lenta";
+    }
     public int getDydis() {
         return Dydis;
     }
@@ -16,6 +20,14 @@ public class Lenta {
 
     public int getBalta() {
         return balta;
+    }
+
+    public void setDydis(int Dydis) {
+        this.Dydis = Dydis;
+    }
+
+    public void setLenta(char[][] lenta) {
+        this.lenta = lenta;
     }
 
     public void setBalta(int balta) {
@@ -37,31 +49,5 @@ public class Lenta {
     public void setKienoejimas(char kienoejimas) {
         this.kienoejimas = kienoejimas;
     }
-    /**
-     *
-     */
-    public Lenta() 
-    {
-	lenta = new char[Dydis][Dydis];
-        balta = 12;
-        juoda = 12;
-        kienoejimas = 'B';
-	// Isdeliojame saskes
-	for (int i=0;i<Dydis;i++)
-	    for (int j=0;j<Dydis;j++)
-		lenta[i][j] = '_';
-
-	for (int i=1;i<Dydis;i+=2) 
-        {
-	    lenta[i][1] = 'B';
-	    lenta[i][5] = 'J';
-	    lenta[i][7] = 'J';
-	}
-	for (int i=0;i<Dydis;i+=2)
-        {
-	    lenta[i][0] = 'B';
-	    lenta[i][2] = 'B';
-	    lenta[i][6] = 'J';
-	}
-    }
+    
 }

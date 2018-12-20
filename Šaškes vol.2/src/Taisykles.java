@@ -21,7 +21,7 @@ public class Taisykles {
     }
 
     public void kitasejimas() {
-        
+
         spausdintuvas.printLenta();
         Scanner stdin = new Scanner(System.in);
 
@@ -55,12 +55,28 @@ public class Taisykles {
         } else {
             lenta.setKienoejimas('B');
         }
-        
+
         if (Pabaiga()) {
             spausdintuvas.printPabaiga(Nugaletojas());
         } else {
             kitasejimas();
         }
+    }
+
+    public Lenta getLenta() {
+        return lenta;
+    }
+
+    public void setLenta(Lenta lenta) {
+        this.lenta = lenta;
+    }
+
+    public Spausdintuvas getSpausdintuvas() {
+        return spausdintuvas;
+    }
+
+    public void setSpausdintuvas(Spausdintuvas spausdintuvas) {
+        this.spausdintuvas = spausdintuvas;
     }
 
     // Ar ejimas galimas ?
@@ -119,7 +135,6 @@ public class Taisykles {
         }
 
     }
-
     public boolean Pabaiga() {
         return (lenta.getBalta() == 0 || lenta.getJuoda() == 0);
     }
@@ -131,5 +146,6 @@ public class Taisykles {
             return "Juodi";
         }
     }
-
 }
+
+
